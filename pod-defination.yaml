@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+        name: pod-1
+        labels:
+                type: first-pod
+                app: myapp
+spec:
+        containers:
+                - name: wordpress
+                  image: wordpress

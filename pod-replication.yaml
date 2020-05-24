@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+        name: rc-1
+        labels:
+                type: first-pod
+                app: myapp
+spec:
+        template:
+                metadata:
+                        name: pod-1
+                        labels:
+                                type: first-pod
+                                app: myapp
+                
+                spec:
+                        containers:
+                                - name: wordpress
+                                  image: wordpress
+        replicas: 2
+        selector:
+                matchLabels:
+                        type: first-pod
